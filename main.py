@@ -33,8 +33,6 @@ if token:
 else:
     sys.exit('Bad token')
 
-#sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-
 playlist_id_to_modify = ''
 
 lists = sp.user_playlists(username)
@@ -69,11 +67,8 @@ hunds = math.floor(nr_tracks / 100)
 overflow = nr_tracks - (hunds * 100)
 hunds_c = hunds
 
-print("hunds " + str(hunds))
-print("overflow " + str(overflow))
 
 i = 0
-
 # remove all tracks for playlist
 while hunds_c >= 1:
     sp.user_playlist_remove_all_occurrences_of_tracks(username, playlist_id_to_modify, t[i:i+99])
@@ -91,3 +86,5 @@ while hunds_c >= 1:
     i += 100
 
 sp.user_playlist_add_tracks(username, playlist_id_to_modify, t[hunds*100:hunds*100+overflow])
+
+print("num tracks shuffled " + str(nr_tracks))
