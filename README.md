@@ -1,6 +1,6 @@
 disarray
 ===
-A playlist auto-shuffler for Spotify, since they have no idea how to shuffle while playing.
+A playlist shuffler for Spotify, since they have no idea how to shuffle while playing.
 
 ## Installation
 
